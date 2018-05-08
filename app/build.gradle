@@ -1,0 +1,101 @@
+apply plugin: 'com.android.application'
+//apt 'com.jakewharton:butterknife-compiler:8.0.1'
+//添加如下代码，应用apt插件
+//apply plugin: 'android-apt'
+//apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.antfortune.freeline' //freeline
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "com.adinnet.struct"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+    }
+    signingConfigs {
+        config {
+            keyAlias 'struct'
+            keyPassword '123456'
+            storeFile file('../struct.jks')
+            storePassword '123456'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+    lintOptions {
+        //即使有lint报错也不停止打包
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    //freeline
+    freeline {
+        hack true
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    //easemob use legacy for android 6.0
+    useLibrary 'org.apache.http.legacy'
+}
+
+//热修复
+repositories {
+    maven {
+        url "http://maven.aliyun.com/nexus/content/repositories/releases"
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    //RxJava
+    compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'io.reactivex:rxjava:1.1.5'
+    //dagger2
+    compile 'com.google.dagger:dagger:2.6'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.6'
+    //retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    //gson
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    //okhttp
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
+    //注解(3.0修改添加方式，注解失效)
+    //    compile 'com.jakewharton:butterknife:8.4.0'
+    api 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //rxlifecycle
+    compile 'com.trello:rxlifecycle:0.3.1'
+    compile 'com.trello:rxlifecycle-components:0.3.1'
+    compile 'com.alibaba:fastjson:1.1.58.android'
+    //freeline
+    debugCompile 'com.antfortune.freeline:runtime:0.8.3'
+    releaseCompile 'com.antfortune.freeline:runtime-no-op:0.8.3'
+    testCompile 'com.antfortune.freeline:runtime-no-op:0.8.3'
+    //litepal
+    compile 'org.litepal.android:core:1.6.1'
+    //热修复
+    compile 'com.aliyun.ams:alicloud-android-hotfix:3.2.0'
+    //easemob
+    //Optional compile for GCM (Google Cloud Messaging).
+    compile 'com.google.android.gms:play-services-gcm:10.2.1'
+//    compile 'com.hyphenate:hyphenate-sdk:3.3.0'
+    compile files('libs/hyphenatechat_3.4.0.1.jar')
+}

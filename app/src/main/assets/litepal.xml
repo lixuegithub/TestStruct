@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="struct" ></dbname>
+    <version value="1" ></version>
+
+    <list>
+        <!--Bean对象的完整包名-->
+        <mapping class="com.adinnet.struct.bean.BookItemBean"></mapping>
+    </list>
+</litepal>

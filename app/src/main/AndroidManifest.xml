@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.adinnet.struct">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- hotfix网络权限(6.0系统需要单独处理ACCESS_WIFI_STATE这个权限) -->
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!-- hotfix外部存储读权限，调试工具加载本地补丁需要 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- easemob start Required -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <!--easemob end-->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:name=".base.BaseApp"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.act.wel.WelAct">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.act.login.LoginAct"/>
+        <activity android:name=".ui.act.record.RecordAct"/>
+        <activity android:name=".ui.act.book.BookListAct"/>
+        <activity android:name=".testutils.TestUtilAct"/>
+        <activity android:name=".easemob.EaseMobAct"/>
+        <activity android:name=".easemob.EaseMobMsgAct"/>
+
+        <!--hotfix start (需要去阿里云后台先创建app 然后创建成功后会有相应的数据)-->
+        <meta-data
+            android:name="com.taobao.android.hotfix.IDSECRET"
+            android:value="24865097" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="4af2f10041f618859abbe7a1e869f4a4" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCxuzojZKgLDbRjAPYKEZPMSBwYit14nOrczjqIgKOPuJ6M9b4mcmbauQNURk0xXZdgMtXTzBr+rdNW1l9DA7PJqM+RbMZGyjLfkNXRWekjECWEyUxkvzT092/M8Ve9i0n3H/E6ABnmE2QpABaeYnDKY4PD2y9z/ZFKsW0VRtltUyUwxARM2eY+CKxP9G+ebjIuA+wH6V3hftSw7btcUB7KrCv0JUjYbhSxNYTPgSf3y+I+DSVYVo8Ixj3Qp2fKHU1ugkOqSg6tbs8QYXbAnpQemBB7AxyFrKLz8Cqt12qJ0osOL12dmkYvzBmD1cLm1WAlOc6rMbAgTkCytruqS/apAgMBAAECggEAIWLxVeq3onPtmdd5YITSxcIZ/QZA+kJH4DihSDkaAIqGxiX3lVNSPO4aUP9vysExCXIjNskVnRfcJmjYtkcAw/YBH+lWCcA79EFJ2SzRnbOPyLTjs90zPn0otE/10nZS66hFcUbJlq231/fbR99oHqy4+Na4wEo2u9g+jIullmKBtEMO1BoRLX2IVhLI8fkvcvGwGrPkhXZHI4jJgB2bp04wYDlcHIQlnDK9GosqNRL6loGr49bToOloO0OqwydYe+aH1BU+e8BxiWpydmXSeI35zxMB017onXMBOvJSka2M20M2vb1NSF6mvf2nz1FazKqZ5408ymWhCsdXHnPeAQKBgQD90zFStaL55UCwhRVtbJFKfkD7oLUf5t7MsQiQXJza2VCaWK/KuSf14JCUTvyADGsJxmO8gRadUkTbPT83qwiY6xm3BBABDbEo7QHf6ia7J8dY1EFLDlQ6H7ISQAzDkHaZBed6mKRS2QTfdVlXVm9p7IHysoPf3K6Pr7ZwT+erQQKBgQCzQRxEhUq8B6BqWAASQMpjo61VKiwrUay5YTxBFaLXta5WUFWQ9ugV3cIg59G5pvClXY8zSNsE6V4oBow5YO89uwMpV982Ia/F6jsOU1/P2SyJtyrvoYrwsTuQrxhpoWrIErfYBSWhtPpw63BtCn/pKYeqr3rMN4NBoN1HWBV5aQKBgQDXZqI0zm/AIg0Dv+yvL7McxIfhAkCzEfmBO7tIx09VaZY9ZYXJQ9flkO0g7ubYw7ESWonJLsNCPs6wPwmm9D4Xh2wLJCdwvW3ajUdJ/itgKCHEAFxolYBk0wEK+8/ZJn9+3MPUBjVtGT5JZAytUWy7NzoP++5ty5lX1oW8ShMQAQKBgGef1jWOUJvOVN/lK3Vh2x4qusMm9A2+03j/SxPc7ByDPNtM6Yo6EgTCA71+BfGrHiaapXPiRCrctb+xuVJaRTOMbtFxqOnkI3boZ2dqr1K6m1Kpfrq0yltGOcb0UcqOs+ohWAIbR5vpwXWRxZZjoXoqtfDoLLbtyIUh94mM1C0xAoGAPxCENprYTy3AbH/j8CRW2I5Ju3R/X9BXh8n9CHlSrmCKNeCOoAqnSW6BOsH5P0oZOCPwpYl5lVy1oPLs+5ns+Eh0FJNN31loJZUAUHClA0Fswjd2s+MZhI0t6U3uYVyeg+OPWQb2sVQLsqpvmEvXsU2CNHv4Yb3YVx9dVXPIlzk=" />
+        <!--hotfix end-->
+        <!--  easemob start 设置环信应用的AppKey -->
+        <meta-data android:name="EASEMOB_APPKEY"  android:value="1129180503177869#struct" />
+        <!-- 声明SDK所需的service SDK核心功能-->
+        <service android:name="com.hyphenate.chat.EMChatService" android:exported="true"/>
+        <service android:name="com.hyphenate.chat.EMJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="true"
+            />
+        <!-- 声明SDK所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <!--easemob end-->
+
+    </application>
+
+</manifest>

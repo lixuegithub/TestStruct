@@ -1,0 +1,108 @@
+{
+    "project_type": "gradle",
+    "android_gradle_plugin_version": "3.0.0",
+    "freeline_gradle_plugin_version": "0.8.8",
+    "java_home": "C:\\Program Files\\Java\\jdk1.8.0_101",
+    "freeline_cache_dir": "F:\\AIYI_Prooject\\Struct",
+    "auto_dependency": true,
+    "product_flavor": "",
+    "build_script": "gradlew.bat :app:assembleDebug",
+    "build_script_work_directory": "",
+    "root_dir": "F:\\AIYI_Prooject\\Struct",
+    "main_project_name": "app",
+    "main_project_dir": "app",
+    "build_directory": "F:\\AIYI_Prooject\\Struct\\app\\build",
+    "build_cache_dir": "F:\\AIYI_Prooject\\Struct\\app\\build\\freeline",
+    "build_tools_version": "26.0.2",
+    "sdk_directory": "D:\\develop\\Android\\sdk",
+    "build_tools_directory": "D:\\develop\\Android\\sdk\\build-tools\\26.0.2",
+    "compile_sdk_version": "android-26",
+    "compile_sdk_directory": "D:\\develop\\Android\\sdk\\platforms\\android-26",
+    "package": "com.adinnet.struct",
+    "debug_package": "com.adinnet.struct",
+    "main_manifest_path": "F:\\AIYI_Prooject\\Struct\\app\\src\\main\\AndroidManifest.xml",
+    "launcher": "com.adinnet.struct.ui.act.login.LoginAct",
+    "apk_path": "F:\\AIYI_Prooject\\Struct\\app\\build\\outputs\\apk\\app-debug.apk",
+    "extra_dep_res_paths": [
+        
+    ],
+    "exclude_dep_res_paths": [
+        
+    ],
+    "main_r_path": "F:\\AIYI_Prooject\\Struct\\app\\build\\generated\\source\\r\\debug\\R.java",
+    "use_jdk8": true,
+    "ignore_resource_ids": [
+        "avd_hide_password_1",
+        "avd_hide_password_2",
+        "avd_hide_password_3",
+        "avd_show_password_1",
+        "avd_show_password_2",
+        "avd_show_password_3"
+    ],
+    "use_system_gradle": false,
+    "check_sources_md5": [
+        
+    ],
+    "main_src_directory": [
+        "F:\\AIYI_Prooject\\Struct\\app\\src\\debug\\java",
+        "F:\\AIYI_Prooject\\Struct\\app\\src\\main\\java"
+    ],
+    "main_res_directory": [
+        "F:\\AIYI_Prooject\\Struct\\app\\src\\debug\\res",
+        "F:\\AIYI_Prooject\\Struct\\app\\src\\main\\res"
+    ],
+    "main_assets_directory": [
+        "F:\\AIYI_Prooject\\Struct\\app\\src\\debug\\assets",
+        "F:\\AIYI_Prooject\\Struct\\app\\src\\main\\assets"
+    ],
+    "main_jni_directory": [
+        "F:\\AIYI_Prooject\\Struct\\app\\src\\debug\\jni",
+        "F:\\AIYI_Prooject\\Struct\\app\\src\\main\\jni"
+    ],
+    "main_jniLibs_directory": [
+        "F:\\AIYI_Prooject\\Struct\\app\\src\\debug\\jniLibs",
+        "F:\\AIYI_Prooject\\Struct\\app\\src\\main\\jniLibs"
+    ],
+    "project_source_sets": {
+        "app": {
+            "main_src_directory": [
+                "F:\\AIYI_Prooject\\Struct\\app\\src\\debug\\java",
+                "F:\\AIYI_Prooject\\Struct\\app\\src\\main\\java"
+            ],
+            "main_res_directory": [
+                "F:\\AIYI_Prooject\\Struct\\app\\src\\debug\\res",
+                "F:\\AIYI_Prooject\\Struct\\app\\src\\main\\res"
+            ],
+            "main_assets_directory": [
+                "F:\\AIYI_Prooject\\Struct\\app\\src\\debug\\assets",
+                "F:\\AIYI_Prooject\\Struct\\app\\src\\main\\assets"
+            ],
+            "main_jni_directory": [
+                "F:\\AIYI_Prooject\\Struct\\app\\src\\debug\\jni",
+                "F:\\AIYI_Prooject\\Struct\\app\\src\\main\\jni"
+            ],
+            "main_jniLibs_directory": [
+                "F:\\AIYI_Prooject\\Struct\\app\\src\\debug\\jniLibs",
+                "F:\\AIYI_Prooject\\Struct\\app\\src\\main\\jniLibs"
+            ],
+            "main_manifest_path": "F:\\AIYI_Prooject\\Struct\\app\\src\\main\\AndroidManifest.xml"
+        }
+    },
+    "modules": [
+        {
+            "name": "app",
+            "path": "F:\\AIYI_Prooject\\Struct\\app"
+        }
+    ],
+    "module_dependencies": {
+        "app": [
+            
+        ]
+    },
+    "databinding": [
+        
+    ],
+    "databinding_modules": [
+        
+    ]
+}
