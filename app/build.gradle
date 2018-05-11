@@ -4,6 +4,7 @@ apply plugin: 'com.android.application'
 //apply plugin: 'android-apt'
 //apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.antfortune.freeline' //freeline
+apply plugin: 'com.jakewharton.hugo'
 
 android {
     compileSdkVersion 26

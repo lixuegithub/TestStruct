@@ -24,6 +24,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import hugo.weaving.DebugLog;
 
 /**
  * 引导页
@@ -36,7 +37,7 @@ public class WelAct extends RxFragmentActivity implements IView {
     @Inject
     RegistePresenter mRegistePresenter;
 
-
+    @DebugLog
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +54,7 @@ public class WelAct extends RxFragmentActivity implements IView {
     }
 
     @OnClick({R.id.tv_toeasemob,R.id.tv_wel,R.id.tv_toTestUtils})
+    @DebugLog
     void onClickView(View view){
         switch (view.getId()){
             case R.id.tv_toeasemob:
