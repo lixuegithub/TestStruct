@@ -17,6 +17,8 @@ import com.adinnet.struct.mvp.IView;
 import com.adinnet.struct.testutils.TestUtilAct;
 import com.adinnet.struct.tool.SystemUtils;
 import com.adinnet.struct.ui.act.book.BookListAct;
+import com.adinnet.struct.ui.act.testact.TestActBAct;
+import com.taobao.sophix.SophixManager;
 import com.trello.rxlifecycle.components.support.RxFragmentActivity;
 
 import javax.inject.Inject;
@@ -31,6 +33,7 @@ import hugo.weaving.DebugLog;
  */
 public class WelAct extends RxFragmentActivity implements IView {
 
+    private static final String TAG = WelAct.class.getSimpleName();
     @BindView(R.id.tv_versioncode)
     TextView tvVersionCode;
 
@@ -42,18 +45,19 @@ public class WelAct extends RxFragmentActivity implements IView {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_wel);
+        LogUtil.e(TAG+"...onCreate...");
         ButterKnife.bind(this);
         //注册Module
         BaseApp.getContext().getAppComponet().registe(new RegisteModule(this))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   .in(this);
         //TODO 在项目入口，推荐在MainActivity 的onCreate方法中获取是否有patch，
         // 不能放在application里面这个补丁是需要我们代码主动去拿，在onCreate中调用SDK里面方法
-//        SophixManager.getInstance().queryAndLoadNewPatch();
-//        LogUtil.e("queryAndLoadNewPatch查询热更新一次....");
+        SophixManager.getInstance().queryAndLoadNewPatch();
+        LogUtil.e("queryAndLoadNewPatch查询热更新一次....");
         //显示当前版本号
-        tvVersionCode.setText("当前版本："+SystemUtils.getVersionCode(this));
+        tvVersionCode.setText(tvVersionCode.getText().toString()+SystemUtils.getVersionCode(this)+"更改Bug");
     }
 
-    @OnClick({R.id.tv_toeasemob,R.id.tv_wel,R.id.tv_toTestUtils})
+    @OnClick({R.id.tv_toeasemob,R.id.tv_wel,R.id.tv_toTestUtils,R.id.tv_testact})
     @DebugLog
     void onClickView(View view){
         switch (view.getId()){
@@ -65,6 +69,9 @@ public class WelAct extends RxFragmentActivity implements IView {
                 break;
             case R.id.tv_toTestUtils:
                 startActivity(new Intent(this, TestUtilAct.class));
+                break;
+            case R.id.tv_testact:
+                startActivity(new Intent(this, TestActBAct.class));
                 break;
             default:
                 break;
@@ -88,5 +95,43 @@ public class WelAct extends RxFragmentActivity implements IView {
     @Override
     public void completeRequest() {
         LogUtil.e("completeRequest...");
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogUtil.e(TAG+"...onResume...");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogUtil.e(TAG+"...onStart...");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogUtil.e(TAG+"...onPause...");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        LogUtil.e(TAG+"...onRestart...");
+    }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        LogUtil.e(TAG+"...onStop...");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LogUtil.e(TAG+"...onDestroy...");
     }
 }

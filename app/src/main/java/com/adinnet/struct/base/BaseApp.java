@@ -3,6 +3,7 @@ package com.adinnet.struct.base;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
+import android.util.Log;
 
 import com.adinnet.struct.comm.LogUtil;
 import com.adinnet.struct.comm.ToastUtil;
@@ -24,7 +25,7 @@ import org.litepal.LitePalApplication;
  * Created by Ms.Li on 2018/3/19.
  */
 public class BaseApp extends LitePalApplication {
-    private static final String TAG = "BaseApp";
+    private static final String TAG = BaseApp.class.getSimpleName();
     private AppComponet appComponent;
 
     private static BaseApp mContext;
@@ -34,6 +35,7 @@ public class BaseApp extends LitePalApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        LogUtil.e(TAG+"..onCreate......");
         appComponent = DaggerAppComponet.builder().appModule(new AppModule(this)).build();
         mContext = this;
         mHandler = new Handler();
@@ -71,26 +73,33 @@ public class BaseApp extends LitePalApplication {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-//        try {
-//            initHotFix();
-//        }catch (ClassCastException e){
-//            e.printStackTrace();
-//        }
+        try {
+            initHotfix();
+        }catch (ClassCastException e){
+            e.printStackTrace();
+        }
+        LogUtil.e(TAG+"..attachBaseContext...");
     }
 
-    private void initHotFix() {
-        // initialize最好放在attachBaseContext最前面
+    private void initHotfix() {
+        String appVersion;
+        try {
+            appVersion = this.getPackageManager().getPackageInfo(this.getPackageName(), 0).versionName;
+        } catch (Exception e) {
+            appVersion = "1.0.0";
+        }
         SophixManager.getInstance().setContext(this)
-                .setAppVersion(Integer.toString(SystemUtils.getVersionCode(this)))
-//                .setAesKey("wangkui198707099")
-                .setAesKey("structapp1234567")
+                .setAppVersion(appVersion)
+                .setAesKey(null)
                 .setEnableDebug(true)
                 .setPatchLoadStatusStub(new PatchLoadStatusListener() {
                     @Override
                     public void onLoad(final int mode, final int code, final String info, final int handlePatchVersion) {
+                        Log.e(TAG,"code..."+code);
                         // 补丁加载回调通知
                         if (code == PatchStatus.CODE_LOAD_SUCCESS) {
                             // 表明补丁加载成功
+                            ToastUtil.showShortToast("表明补丁加载成功");
                         } else if (code == PatchStatus.CODE_LOAD_RELAUNCH) {
                             ToastUtil.showShortToast("热更新下载完成，需要重启才可生效");
                             // 表明新补丁生效需要重启. 开发者可提示用户或者强制重启;
@@ -99,6 +108,7 @@ public class BaseApp extends LitePalApplication {
                             restartApplication();
                         } else {
                             // 其它错误信息, 查看PatchStatus类说明
+                            ToastUtil.showShortToast("其它错误信息, 查看PatchStatus类说明");
                         }
                     }
                 }).initialize();

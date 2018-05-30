@@ -14,7 +14,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
     signingConfigs {
         config {
@@ -30,9 +30,9 @@ android {
             signingConfig signingConfigs.config
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        debug {
-            signingConfig signingConfigs.config
-        }
+//        debug {
+//            signingConfig signingConfigs.config
+//        }
     }
     lintOptions {
         //即使有lint报错也不停止打包
@@ -50,13 +50,6 @@ android {
     }
     //easemob use legacy for android 6.0
     useLibrary 'org.apache.http.legacy'
-}
-
-//热修复
-repositories {
-    maven {
-        url "http://maven.aliyun.com/nexus/content/repositories/releases"
-    }
 }
 
 dependencies {
@@ -93,10 +86,10 @@ dependencies {
     //litepal
     compile 'org.litepal.android:core:1.6.1'
     //热修复
-    compile 'com.aliyun.ams:alicloud-android-hotfix:3.2.0'
+    compile 'com.aliyun.ams:alicloud-android-hotfix:3.2.3'
     //easemob
     //Optional compile for GCM (Google Cloud Messaging).
     compile 'com.google.android.gms:play-services-gcm:10.2.1'
-//    compile 'com.hyphenate:hyphenate-sdk:3.3.0'
+    //    compile 'com.hyphenate:hyphenate-sdk:3.3.0'
     compile files('libs/hyphenatechat_3.4.0.1.jar')
 }

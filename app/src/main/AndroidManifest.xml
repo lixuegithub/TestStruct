@@ -53,17 +53,18 @@
         <activity android:name=".testutils.TestUtilAct"/>
         <activity android:name=".easemob.EaseMobAct"/>
         <activity android:name=".easemob.EaseMobMsgAct"/>
+        <activity android:name=".ui.act.testact.TestActBAct"/>
 
         <!--hotfix start (需要去阿里云后台先创建app 然后创建成功后会有相应的数据)-->
         <meta-data
             android:name="com.taobao.android.hotfix.IDSECRET"
-            android:value="24865097" />
+            android:value="24912686-1" />
         <meta-data
             android:name="com.taobao.android.hotfix.APPSECRET"
-            android:value="4af2f10041f618859abbe7a1e869f4a4" />
+            android:value="618f7d7cb4ba5b3ba0a618a18a5bcfa2" />
         <meta-data
             android:name="com.taobao.android.hotfix.RSASECRET"
-            android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCxuzojZKgLDbRjAPYKEZPMSBwYit14nOrczjqIgKOPuJ6M9b4mcmbauQNURk0xXZdgMtXTzBr+rdNW1l9DA7PJqM+RbMZGyjLfkNXRWekjECWEyUxkvzT092/M8Ve9i0n3H/E6ABnmE2QpABaeYnDKY4PD2y9z/ZFKsW0VRtltUyUwxARM2eY+CKxP9G+ebjIuA+wH6V3hftSw7btcUB7KrCv0JUjYbhSxNYTPgSf3y+I+DSVYVo8Ixj3Qp2fKHU1ugkOqSg6tbs8QYXbAnpQemBB7AxyFrKLz8Cqt12qJ0osOL12dmkYvzBmD1cLm1WAlOc6rMbAgTkCytruqS/apAgMBAAECggEAIWLxVeq3onPtmdd5YITSxcIZ/QZA+kJH4DihSDkaAIqGxiX3lVNSPO4aUP9vysExCXIjNskVnRfcJmjYtkcAw/YBH+lWCcA79EFJ2SzRnbOPyLTjs90zPn0otE/10nZS66hFcUbJlq231/fbR99oHqy4+Na4wEo2u9g+jIullmKBtEMO1BoRLX2IVhLI8fkvcvGwGrPkhXZHI4jJgB2bp04wYDlcHIQlnDK9GosqNRL6loGr49bToOloO0OqwydYe+aH1BU+e8BxiWpydmXSeI35zxMB017onXMBOvJSka2M20M2vb1NSF6mvf2nz1FazKqZ5408ymWhCsdXHnPeAQKBgQD90zFStaL55UCwhRVtbJFKfkD7oLUf5t7MsQiQXJza2VCaWK/KuSf14JCUTvyADGsJxmO8gRadUkTbPT83qwiY6xm3BBABDbEo7QHf6ia7J8dY1EFLDlQ6H7ISQAzDkHaZBed6mKRS2QTfdVlXVm9p7IHysoPf3K6Pr7ZwT+erQQKBgQCzQRxEhUq8B6BqWAASQMpjo61VKiwrUay5YTxBFaLXta5WUFWQ9ugV3cIg59G5pvClXY8zSNsE6V4oBow5YO89uwMpV982Ia/F6jsOU1/P2SyJtyrvoYrwsTuQrxhpoWrIErfYBSWhtPpw63BtCn/pKYeqr3rMN4NBoN1HWBV5aQKBgQDXZqI0zm/AIg0Dv+yvL7McxIfhAkCzEfmBO7tIx09VaZY9ZYXJQ9flkO0g7ubYw7ESWonJLsNCPs6wPwmm9D4Xh2wLJCdwvW3ajUdJ/itgKCHEAFxolYBk0wEK+8/ZJn9+3MPUBjVtGT5JZAytUWy7NzoP++5ty5lX1oW8ShMQAQKBgGef1jWOUJvOVN/lK3Vh2x4qusMm9A2+03j/SxPc7ByDPNtM6Yo6EgTCA71+BfGrHiaapXPiRCrctb+xuVJaRTOMbtFxqOnkI3boZ2dqr1K6m1Kpfrq0yltGOcb0UcqOs+ohWAIbR5vpwXWRxZZjoXoqtfDoLLbtyIUh94mM1C0xAoGAPxCENprYTy3AbH/j8CRW2I5Ju3R/X9BXh8n9CHlSrmCKNeCOoAqnSW6BOsH5P0oZOCPwpYl5lVy1oPLs+5ns+Eh0FJNN31loJZUAUHClA0Fswjd2s+MZhI0t6U3uYVyeg+OPWQb2sVQLsqpvmEvXsU2CNHv4Yb3YVx9dVXPIlzk=" />
+            android:value="MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDA1aUJpdNkE+zIJnWjuCI90VzQg7WEYDczNn0NrFBnMmKHn5lA9UWtB6Fs+yWHRLbv68CWkRQMa0HoqVIffnWqlda0zmOzWu2Fg7CfWbUWFy+k6ckZISQMZatbsCIPcMk8JbLVU6yxqxmwyLsL/UCAChSCuplNKyMUfqS7t+3Uosu7JsFLjxx/O/AgOEY4v67tj8MeESVuZvrltbDOkPS6hE0/O8ny6jXH+DA77f0HPQk6DNpVK8sTknZbP2faBNxdFS+nIdgMYf2YYKyfcsxz/zxcOseh9PdVg23t6GfUIVNTFFkHdJ6n4jUoLobKMRnqX0MMmy2U217+MwsAd3dfAgMBAAECggEAHJmTOLMXfyhVXfoWSInuyixbD7H5IgEDLt1N/tEnu6aFZogNOs0l4FvZXUiCcGWInFzi23H4/z6JL/Cs9W7UFNDUX0ydDOTXhY3ajEfJy9T0hAkIgmmf5xbNK3QcGR4pOnp845bdbhxqWwXqeAS/pD3afOkgA4n6UffWhuDorTiV/MxlgSdtYY7HvUGgqr/xbVCoDP1y9wVFHpMOz0S4SxNVtVDQ72CabsJ9M/nW9MsnDKwBruU6Fn2la2s8FyJv42hl1cYvavH8F+oLxd54mmghSJWGwkmZaB0Zrw5qfi7GQ+1+u1jcSIJczEVbAr2BuhFyDRh2GVHJz59h7LM8QQKBgQDl8fBhZr5cnJPdK1FEsXMmRwa+CLyzoa3tWFmryrCfTS1QA3d5BlYQdiw5vKQPAMJ5dEBErB2BFG1iDnA9614QgtP6m21hrigxzMSIJea0kaXwKQ8OkD/vcOk9qucbv2Fva67JHLk2GnR3iMTOpdZA+Q2Vwx+0U0dm/6c1f1yn+wKBgQDWrzvKyHOorrb/4yrn6yeNJb4vfvTJwSDRnLxg0aMIGxJHzdIOwmX0dDjKSm2r5tF6tRLKeDPEhqG14OnvgYxGHXXZcIYus0+78V/JCI2bwk2cqxcXd60jPSKsrPv9KIWeuSeL5DYLmQ2FnNPuSg503x2GjoaOfWtulL5cdImc7QKBgAmYmi6GaiVVR3pwZ1jViveq+SYPGUjp02dXS462y74qK1zueBrt38OaGuhh7frOTk9hQZlcEXMklhgEgDylSOypeQ05VUxBR14krIL+Ce25MlKedAlojbKBZMp1CmYHC5rpxIaSE0ylt/yREZ2KIDHf8ugwF2+gFhe/TYwW/5fnAoGAQYgqA0Ne8r2qRL/uJ+8DGrXLsSnaxP876mAirJcxYdcJpHtyRGkYwB79+tnvUkrZ5NADFWTNwI6sLB2kqyRrUjfJ8n7Dptu7Wg5bA72lpEcSc+FR4ir44cnWnMkM/oDxELtKFAysZqvokcGGe7WFZi15EMrOzg4Azjd/SC+Wlh0CgYA4z6qxC4y7V0Ddp1Om/YzSMmD4i4BhRc9/gDa6azHG8vFPH8gkdQn6EoCKjSa5ldz08wToTmC5LvtCQe27dtaWeUhsM3aNYCShIa1o8VIeicxGjntqLKhT5V1EQqwpdbTzsvOY2NQilqm6qej756AzR6vgnn4UDL4u6ZQGE2xebw==" />
         <!--hotfix end-->
         <!--  easemob start 设置环信应用的AppKey -->
         <meta-data android:name="EASEMOB_APPKEY"  android:value="1129180503177869#struct" />

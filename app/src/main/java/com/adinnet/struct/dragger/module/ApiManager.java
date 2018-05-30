@@ -48,6 +48,7 @@ public class ApiManager {
 
     /**注册获取设备唯一标识*/
     public void registe(BaseCallBack callBack){
+        /**反射和接受的数据保持一致*/
         api.registe()
                 .flatMap(new BaseResponseFunc1<RegisterBean>())
                 .subscribeOn(Schedulers.io())
@@ -58,7 +59,8 @@ public class ApiManager {
 //                        LogUtil.e("xlee..."+registerBean.toString());
 //                    }
 //                })
-                .subscribe(new MySubscriber<RegisterBean>(application,callBack));
+                /**接受对象可以和发射的不一致，后面使用可以强转成该对象*/
+                .subscribe(new MySubscriber<Object>(application,callBack));
     }
 
     /**获取视频列表*/
