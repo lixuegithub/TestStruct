@@ -11,6 +11,7 @@ import com.adinnet.struct.dragger.componet.AppComponet;
 import com.adinnet.struct.dragger.componet.DaggerAppComponet;
 import com.adinnet.struct.dragger.module.AppModule;
 import com.adinnet.struct.tool.SystemUtils;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.antfortune.freeline.FreelineCore;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMOptions;
@@ -32,6 +33,9 @@ public class BaseApp extends LitePalApplication {
     private static int myTid;
     private static Handler mHandler;
 
+    //  ARouter调试开关
+    private boolean isDebugARouter = true;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -44,6 +48,15 @@ public class BaseApp extends LitePalApplication {
         FreelineCore.init(this);
         initBugly();
         initMob();
+        if (isDebugARouter){
+            //下面两行必须写在init之前，否则这些配置在init过程将会无效
+            ARouter.openLog();//开启打印日志
+            //开启调试模式（如果在InstantRun模式下运行，必须开启调试模式！）
+            //线上版本需要关闭，否则会有安全风险
+            ARouter.openDebug();
+        }
+        //初始化arouter
+        ARouter.init(this);
     }
 
     private void initMob() {

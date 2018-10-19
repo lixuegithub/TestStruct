@@ -64,4 +64,55 @@
         android:padding="8dp"
         android:text="To TestAct Life Circle" />
 
+    <TextView
+        android:id="@+id/tv_testARouter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:padding="8dp"
+        android:text="ARouter跳转首页" />
+
+    <TextView
+        android:id="@+id/tv_testARouterArgs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:padding="8dp"
+        android:text="ARouter带参数跳转首页" />
+
+
+    <TextView
+        android:id="@+id/tv_Chart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:padding="8dp"
+        android:text="To Chart" />
+
+    <TextClock
+        android:id="@+id/my_tc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFF0000"
+        android:textSize="24sp"
+        android:visibility="gone"
+        />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/et_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello world"/>
+
 </LinearLayout>

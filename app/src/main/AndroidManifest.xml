@@ -54,6 +54,8 @@
         <activity android:name=".easemob.EaseMobAct"/>
         <activity android:name=".easemob.EaseMobMsgAct"/>
         <activity android:name=".ui.act.testact.TestActBAct"/>
+        <activity android:name=".ui.act.arouter.ARoterAct"/>
+        <activity android:name=".ui.act.chart.ChartAct"/>
 
         <!--hotfix start (需要去阿里云后台先创建app 然后创建成功后会有相应的数据)-->
         <meta-data

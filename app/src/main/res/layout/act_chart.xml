@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+    <com.adinnet.struct.ui.act.widget.MyView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:visibility="gone" />
+
+    <com.adinnet.struct.ui.act.widget.WaveView
+        android:id="@+id/waveView"
+        android:layout_width="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal" />
+
+    <com.adinnet.struct.ui.act.widget.WaveProgress
+        android:id="@+id/wave_progress_bar"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        app:darkWaveAnimTime="2000"
+        app:darkWaveColor="@color/waveOne"
+        app:lightWaveAnimTime="2000"
+        app:lightWaveColor="@color/waveTwo"
+        app:lockWave="false"
+        app:valueSize="35sp"
+        app:waveHeight="10dp"
+        app:waveNum="2" />
+
+
+</LinearLayout>
