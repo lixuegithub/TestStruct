@@ -42,6 +42,8 @@
         android:name=".base.BaseApp"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.act.wel.WelAct">
+        </activity>
+        <activity android:name=".ui.act.testlayout.TestLayoutAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
